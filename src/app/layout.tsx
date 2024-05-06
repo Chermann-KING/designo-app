@@ -1,15 +1,13 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+"use client";
+
+import { Jost } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/header/Header";
 import Footer from "@/components/shared/footer/Footer";
+import styled, { ThemeProvider } from "styled-components";
+import Theme from "@/theme/defaultTheme";
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Designo App",
-  description: "Application design agency",
-};
+const jost = Jost({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -17,12 +15,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <ThemeProvider theme={Theme}>
+      <html lang="en">
+        <body className={jost.className}>
+          <Header />
+          <WapperStyled>{children}</WapperStyled>
+          <Footer />
+        </body>
+      </html>
+    </ThemeProvider>
   );
 }
+
+const WapperStyled = styled.div`
+  /* moblie first */
+  border: 2px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+`;
