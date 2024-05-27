@@ -4,12 +4,15 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 export default function Header() {
+  // State pour ouvrir et fermer le menu
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Fonction pour ouvrir et fermer le menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Fermer le menu lorsque la largeur de l'écran est supérieure à 768px
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
@@ -24,10 +27,12 @@ export default function Header() {
     };
   }, []);
 
+  // Empêcher le défilement de la page lorsque le menu est ouvert
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
   }, [isMenuOpen]);
 
+  // Affichage du composant
   return (
     <HeaderStyled>
       <Link href="/" className="logo" onClick={() => setIsMenuOpen(false)}>
@@ -90,7 +95,7 @@ const MobileMenuIcon = styled.button`
   border: none;
   cursor: pointer;
   display: block;
-  margin-left: 10px;
+  margin-left: ${({ theme }) => theme.space.xs};
 
   @media (min-width: 576px) {
     display: none;
@@ -117,7 +122,7 @@ const HeaderStyled = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: ${({ theme }) => theme.space.md};
   height: 97px;
 
   &:before {
@@ -137,10 +142,11 @@ const HeaderStyled = styled.header`
 
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: ${({ theme }) => theme.space.xs};
 
     span {
-      font-size: 1.8rem;
+      //équivaut à 1.8rem
+      font-size: calc(${({ theme }) => theme.typography.body.fontSize} * 1.8);
       text-transform: uppercase;
       font-weight: bold;
     }
@@ -179,11 +185,13 @@ const HeaderStyled = styled.header`
       gap: 2rem;
       width: 100%;
       padding: 47px 0;
+
       align-self: flex-end;
 
       li {
-        font-size: 24px;
-        font-weight: 400;
+        /* équivaut à 1.2rem */
+        font-size: calc(${({ theme }) => theme.typography.body.fontSize} * 1.5);
+        font-weight: ${({ theme }) => theme.typography.body.fontWeight};
         text-transform: uppercase;
         line-height: 25px;
         letter-spacing: 2px;

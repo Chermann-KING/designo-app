@@ -56,6 +56,7 @@ const Theme: DefaultTheme = {
     },
     body: {
       fontSize: "1rem",
+      fontWeight: "400",
       lineHeight: "1.6",
       letterSpacing: "0rem",
     },

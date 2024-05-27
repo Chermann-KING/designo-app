@@ -56,6 +56,7 @@ declare module "styled-components" {
       };
       body: {
         fontSize: string;
+        fontWeight: string;
         lineHeight: string;
         letterSpacing: string;
       };
