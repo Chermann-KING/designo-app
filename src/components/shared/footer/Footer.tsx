@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,9 +7,10 @@ import { usePathname } from "next/navigation";
 
 export default function Footer() {
   const pathname = usePathname();
+  const isContactPage = pathname === "/contact";
 
   return (
-    <FooterStyled>
+    <FooterStyled isContactPage={isContactPage}>
       <div className="footer-wrapper">
         {pathname !== "/contact" && (
           <div className="top-footer-wrapper">
@@ -151,29 +150,36 @@ export default function Footer() {
   );
 }
 
-const FooterStyled = styled.footer`
+interface FooterStyledProps {
+  isContactPage: boolean;
+}
+
+const FooterStyled = styled.footer<FooterStyledProps>`
   .footer-wrapper {
     /* mobile first */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 1005px;
+    /* height: 1005px; */
+    height: ${(props) => (props.isContactPage ? "626px" : "1005px")};
 
-    margin-top: 120px;
+    /* margin-top: 120px; */
+    margin-top: ${(props) => (props.isContactPage ? "0px" : "120px")};
 
     /* Styles pour tablette */
     @media (min-width: 481px) {
-      height: 687px;
+      /* height: 687px; */
+      height: ${(props) => (props.isContactPage ? "337px" : "687px")};
     }
 
     /* Styles pour ordinateur */
     @media (min-width: 769px) {
-      height: 613px;
+      /* height: 613px; */
+      height: ${(props) => (props.isContactPage ? "321px" : "613px")};
     }
 
     .top-footer-wrapper {
       /* mobile first */
-      z-index: 10px;
       width: clamp(327px, 100%, 1191px);
       height: 379px;
       margin: 0 auto;
@@ -194,7 +200,6 @@ const FooterStyled = styled.footer`
 
     .bottom-footer-wrapper {
       /* mobile first */
-      z-index: -1;
       height: 815px;
       background-color: #1d1c1e;
       display: flex;
@@ -271,7 +276,6 @@ const FooterStyled = styled.footer`
             list-style: none;
 
             li:hover a {
-              color: red;
               text-decoration: underline;
             }
           }

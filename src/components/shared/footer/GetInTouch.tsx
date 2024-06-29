@@ -20,6 +20,7 @@ const GetInTouch = () => {
 
 const SectionStyled = styled.section`
   /* Mobile first */
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
