@@ -30,9 +30,9 @@ export default function RootLayout({
 const WapperStyled = styled.div`
   /* moblie first */
   border: 2px solid red;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   min-height: 100vh;
 `;
