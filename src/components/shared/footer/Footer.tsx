@@ -195,6 +195,7 @@ const FooterStyled = styled.footer<FooterStyledProps>`
       /* Styles pour ordinateur */
       @media (min-width: 769px) {
         height: 292px;
+        padding: 0;
       }
     }
 
@@ -208,6 +209,11 @@ const FooterStyled = styled.footer<FooterStyledProps>`
       /* Styles pour les tablettes */
       @media (min-width: 481px) {
         height: 423px;
+
+        .footer-logo-menu,
+        .footer-address-contact-social-link {
+          width: 100%;
+        }
       }
       /* Styles pour ordinateur */
       @media (min-width: 769px) {
@@ -217,7 +223,7 @@ const FooterStyled = styled.footer<FooterStyledProps>`
       .bottom-footer {
         /* mobile first */
         width: 100%;
-        max-width: 1111px;
+        max-width: 1191px;
         height: 498px;
 
         margin: 0 auto;
@@ -301,6 +307,7 @@ const FooterStyled = styled.footer<FooterStyledProps>`
 
         /* Styles pour tablette */
         @media (min-width: 481px) {
+          max-width: 1191px;
           height: 117px;
           margin-bottom: 85px;
 
