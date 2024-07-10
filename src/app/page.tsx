@@ -1,12 +1,14 @@
 "use client";
 
 import Hero from "@/components/Hero";
+import Services from "@/components/Services";
 import styled from "styled-components";
 
 export default function Home() {
   return (
     <ContainerStyled>
       <Hero />
+      <Services />
     </ContainerStyled>
   );
 }
@@ -22,7 +24,7 @@ const ContainerStyled = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: ${({ theme }) => theme.space.xs};
+  gap: 120px;
 
   // Styles pour les tablettes
   @media (min-width: 481px) and (max-width: 768px) {
@@ -32,14 +34,6 @@ const ContainerStyled = styled.div`
   // Styles pour les ordinateurs de bureau
   @media (min-width: 769px) {
     padding: 0;
+    gap: 160px;
   }
-`;
-
-const TitleStyled = styled.h1`
-  color: ${({ theme }) => theme.colors.primary.peach};
-  /* font-family: ${({ theme }) => theme.typography.fontFamily}; */
-  font-size: ${({ theme }) => theme.typography.headings.h1.fontSize};
-  font-weight: ${({ theme }) => theme.typography.headings.h1.fontWeight};
-  line-height: ${({ theme }) => theme.typography.headings.h1.lineHeight};
-  letter-spacing: ${({ theme }) => theme.typography.headings.h1.letterSpacing};
 `;
