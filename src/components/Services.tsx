@@ -1,12 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import ServiceCard from "@/components/shared/ServiceCard";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 function Services() {
-  const router = useRouter();
-
   return (
     <SectionStyled>
       <Link href="/web-design" passHref className={"one"}>
