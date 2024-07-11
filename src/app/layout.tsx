@@ -29,7 +29,7 @@ export default function RootLayout({
 
 const WapperStyled = styled.div`
   /* moblie first */
-  border: 2px solid red;
+  /* border: 2px solid red; */
 
   display: flex;
   flex-direction: column;

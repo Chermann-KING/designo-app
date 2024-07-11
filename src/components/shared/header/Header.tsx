@@ -35,89 +35,64 @@ export default function Header() {
   // Affichage du composant
   return (
     <HeaderStyled>
-      <Link href="/" className="logo" onClick={() => setIsMenuOpen(false)}>
-        <Image
-          src="/images/favicon-32x32.png"
-          alt="Logo Designo"
-          width={24}
-          height={24}
-        />
-        <span>Designo</span>
-      </Link>
-
-      <MobileMenuIcon onClick={toggleMenu}>
-        {isMenuOpen ? (
+      <LogoAndNavWrapper>
+        <Link href="/" className="logo" onClick={() => setIsMenuOpen(false)}>
           <Image
-            src="/images/shared/mobile/icon-close.svg"
-            alt="Fermer menu"
+            src="/images/favicon-32x32.png"
+            alt="Logo Designo"
             width={24}
             height={24}
           />
-        ) : (
-          <Image
-            src="/images/shared/mobile/icon-hamburger.svg"
-            alt="Ouvrir menu"
-            width={24}
-            height={24}
-          />
-        )}
-      </MobileMenuIcon>
+          <span>Designo</span>
+        </Link>
 
-      {isMenuOpen && <Overlay onClick={toggleMenu} />}
+        <MobileMenuIcon onClick={toggleMenu}>
+          {isMenuOpen ? (
+            <Image
+              src="/images/shared/mobile/icon-close.svg"
+              alt="Fermer menu"
+              width={24}
+              height={24}
+            />
+          ) : (
+            <Image
+              src="/images/shared/mobile/icon-hamburger.svg"
+              alt="Ouvrir menu"
+              width={24}
+              height={24}
+            />
+          )}
+        </MobileMenuIcon>
 
-      <nav className={isMenuOpen ? "open" : ""}>
-        <ul>
-          <li>
-            <Link href="/our-company" onClick={() => setIsMenuOpen(false)}>
-              Our Company
-            </Link>
-          </li>
-          <li>
-            <Link href="/locations" onClick={() => setIsMenuOpen(false)}>
-              Locations
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </nav>
+        {isMenuOpen && <Overlay onClick={toggleMenu} />}
+
+        <nav className={isMenuOpen ? "open" : ""}>
+          <ul>
+            <li>
+              <Link href="/our-company" onClick={() => setIsMenuOpen(false)}>
+                Our Company
+              </Link>
+            </li>
+            <li>
+              <Link href="/locations" onClick={() => setIsMenuOpen(false)}>
+                Locations
+              </Link>
+            </li>
+            <li>
+              <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </LogoAndNavWrapper>
     </HeaderStyled>
   );
 }
 
-const MobileMenuIcon = styled.button`
-  z-index: 15; // Au-dessus de l'overlay
-
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: block;
-  margin-left: ${({ theme }) => theme.space.xs};
-
-  @media (min-width: 576px) {
-    display: none;
-  }
-`;
-
-const Overlay = styled.div`
-  z-index: 10; // Sous le MobileMenuIcon
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-
-  pointer-events: all;
-`;
-
 const HeaderStyled = styled.header`
-  /* mobile first */
-  z-index: 10;
+  position: relative;
+  z-index: 20;
 
   display: flex;
   justify-content: space-between;
@@ -127,25 +102,22 @@ const HeaderStyled = styled.header`
 
   &:before {
     content: "";
-    z-index: 11;
-
+    z-index: 12;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 97px;
-    background: white;
+    background: ${({ theme }) => theme.colors.primary.white};
   }
 
   .logo {
-    z-index: 15;
-
+    z-index: 90;
     display: flex;
     align-items: center;
     gap: ${({ theme }) => theme.space.xs};
 
     span {
-      //équivaut à 1.8rem
       font-size: calc(${({ theme }) => theme.typography.body.fontSize} * 1.8);
       text-transform: uppercase;
       font-weight: bold;
@@ -153,43 +125,38 @@ const HeaderStyled = styled.header`
   }
 
   nav {
-    z-index: 10;
-
+    z-index: 11;
     pointer-events: auto;
-
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     height: 331px;
-    background-color: white;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateY(-100%); // Cacher le menu par défaut
+    transform: translateY(-100%);
     transition: transform 0.3s ease-in-out;
 
     &.open {
-      transform: translateY(0); // Afficher lorsque le menu est ouvert
+      transform: translateY(0);
     }
 
     ul {
-      background-color: #1d1c1e;
-      color: white;
-
+      background-color: ${({ theme }) => theme.colors.primary.black};
+      color: ${({ theme }) => theme.colors.primary.white};
       list-style: none;
       display: flex;
       flex-direction: column;
-      text-align: center;
+      text-align: left;
       gap: 2rem;
       width: 100%;
-      padding: 47px 0;
-
+      padding: 47px 26px;
       align-self: flex-end;
 
       li {
-        /* équivaut à 1.2rem */
         font-size: calc(${({ theme }) => theme.typography.body.fontSize} * 1.5);
         font-weight: ${({ theme }) => theme.typography.body.fontWeight};
         text-transform: uppercase;
@@ -199,9 +166,8 @@ const HeaderStyled = styled.header`
     }
 
     @media (min-width: 576px) {
-      z-index: 12;
-
-      position: static; // Comportement normal pour les écrans plus grands
+      z-index: 90;
+      position: static;
       transform: none;
       display: flex;
       justify-content: flex-end;
@@ -228,7 +194,37 @@ const HeaderStyled = styled.header`
   }
 
   @media (min-width: 576px) {
-    /* tablette and desktop */
     height: 153px;
   }
+`;
+
+const LogoAndNavWrapper = styled.div`
+  width: clamp(327px, 100%, 1191px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const MobileMenuIcon = styled.button`
+  z-index: 90;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin-left: ${({ theme }) => theme.space.xs};
+
+  @media (min-width: 576px) {
+    display: none;
+  }
+`;
+
+const Overlay = styled.div`
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: all;
 `;
