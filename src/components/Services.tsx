@@ -74,7 +74,7 @@ const SectionStyled = styled.section`
 
   padding: 0 23px;
 
-  // Styles pour les tablettes et ordinateur
+  // Styles pour les tablettes
   @media (min-width: 481px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 200px);
@@ -88,9 +88,8 @@ const SectionStyled = styled.section`
   }
   /* Styles pour ordinateur */
   @media (min-width: 769px) {
-    /* height: 640px; */
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 308px);
     gap: 24px 30px;
     grid-template-areas:
       "one two"
