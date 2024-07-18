@@ -63,13 +63,13 @@ ServiceCardProps) => (
 );
 
 const Card = styled.div`
+  /* mobile first */
   position: relative;
   cursor: pointer;
   overflow: hidden;
   border-radius: 15px;
-  height: 100%;
+  height: 250px;
 
-  //todo à voir
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,6 +88,16 @@ const Card = styled.div`
 
   &:hover::before {
     background-color: rgba(231, 129, 107, 0.5);
+  }
+
+  // Styles pour les tablettes
+  @media (min-width: 481px) and (max-width: 768px) {
+    height: 200px;
+  }
+
+  // Styles pour les ordinateurs de bureau
+  @media (min-width: 769px) {
+    height: 308px;
   }
 `;
 
