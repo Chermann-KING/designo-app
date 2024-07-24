@@ -97,7 +97,9 @@ const Card = styled.div`
 
   // Styles pour les ordinateurs de bureau
   @media (min-width: 769px) {
-    height: 308px;
+    width: 100%;
+    min-height: 308px;
+    height: 100%;
   }
 `;
 

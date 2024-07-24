@@ -17,7 +17,7 @@ export default function Home() {
 
 const ContainerStyled = styled.div`
   /* mobile first */
-  width: clamp(327px, 100%, 1191px);
+  width: clamp(327px, 100%, 1111px);
   height: 100%;
 
   display: flex;
