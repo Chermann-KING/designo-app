@@ -179,10 +179,12 @@ const ServicesStyled = styled.section`
 
   // Styles pour ordinateur
   @media (min-width: 769px) {
+    height: 308px;
+
     display: grid;
     grid-template-columns: repeat(2, 541px);
-    grid-template-rows: 308px;
-    gap: 24px 30px;
+    grid-template-rows: 1fr;
+    column-gap: 30px;
     padding: 0;
 
     a {
