@@ -71,7 +71,6 @@ export default function AppDesignPage() {
         <Link href="/web-design" passHref className={"one"}>
           <ServiceCard
             title={"Web Design"}
-            // desktopImage={"/images/home/tablet/image-web-design.jpg"}
             desktopImage={"/images/home/desktop/image-web-design-large.jpg"}
             tabletImage={"/images/home/tablet/image-web-design.jpg"}
             mobileImage={"/images/home/mobile/image-web-design.jpg"}
@@ -79,7 +78,7 @@ export default function AppDesignPage() {
             imageHeight={640}
             imageAlt="photo de téléphone avec une application"
             // className={"one"}
-            // onClick={() => router.push("/app-design")}
+            // onClick={() => router.push("/web-design")}
           />
         </Link>
         <Link href="/graphic-design" passHref className={"two"}>
