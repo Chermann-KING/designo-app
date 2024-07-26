@@ -195,14 +195,23 @@ const HeaderStyled = styled.header`
 
   @media (min-width: 576px) {
     height: 153px;
+
+    nav {
+      margin-left: 10px;
+    }
   }
 `;
 
 const LogoAndNavWrapper = styled.div`
-  width: clamp(327px, 100%, 1191px);
+  width: clamp(327px, 100%, 1111px);
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+
+  // Styles pour les tablettes
+  @media (min-width: 481px) and (max-width: 768px) {
+    max-width: 689px;
+  }
 `;
 
 const MobileMenuIcon = styled.button`

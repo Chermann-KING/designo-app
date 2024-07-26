@@ -74,8 +74,8 @@ const SectionStyled = styled.section`
 
   padding: 0 23px;
 
-  // Styles pour les tablettes et ordinateur
-  @media (min-width: 481px) {
+  // Styles pour les tablettes
+  @media (min-width: 481px) and (max-width: 768px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 200px);
     gap: 24px 30px;
@@ -86,18 +86,37 @@ const SectionStyled = styled.section`
 
     padding: 0;
   }
-  /* Styles pour ordinateur */
+
+  // Styles pour ordinateur
   @media (min-width: 769px) {
-    /* height: 640px; */
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: 541px 541px;
+    grid-template-rows: 308px 308px;
     gap: 24px 30px;
-    grid-template-areas:
-      "one two"
-      "one three";
-  }
-  a {
-    height: 100%;
+    padding: 0;
+
+    a {
+      height: 100%;
+      width: 100%;
+    }
+    .one {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+    .two {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
+    .three {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
   }
 `;
 
