@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
+import { usePathname } from "next/navigation";
 
 // Props types
 interface ServiceCardProps {
@@ -15,7 +16,7 @@ interface ServiceCardProps {
   //   onClick: () => void;
 }
 
-const ServiceCard = ({
+function ServiceCard({
   title,
   desktopImage,
   tabletImage,
@@ -24,45 +25,54 @@ const ServiceCard = ({
   imageHeight,
   imageAlt,
   className,
-}: //   onClick,
-ServiceCardProps) => (
-  <Card className={className}>
-    <Content>
-      <h2>{title}</h2>
-      {/* <Button onClick={onClick}> */}
-      <Button>
-        <span className="text">View projects</span>
-        <span className="icon">
-          <svg width="7" height="10" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M1 1l4 4-4 4"
-              stroke="#E7816B"
-              strokeWidth="2"
-              fill="none"
-              fillRule="evenodd"
-            />
-          </svg>
-        </span>
-      </Button>
-    </Content>
-    <ImageContainer>
-      <picture>
-        <source media="(min-width: 1000px)" srcSet={desktopImage} />
-        <source media="(min-width: 650px)" srcSet={tabletImage} />
-        <Image
-          src={mobileImage}
-          alt={imageAlt}
-          width={imagewidth}
-          height={imageHeight}
-          //   layout="fill"
-          //   objectFit="cover"
-        />
-      </picture>
-    </ImageContainer>
-  </Card>
-);
+}: // onClick,
+ServiceCardProps) {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
-const Card = styled.div`
+  return (
+    <Card className={className} isHomePage={isHomePage}>
+      <Content>
+        <h2>{title}</h2>
+        {/* <Button onClick={onClick}> */}
+        <Button>
+          <span className="text">View projects</span>
+          <span className="icon">
+            <svg width="7" height="10" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1 1l4 4-4 4"
+                stroke="#E7816B"
+                strokeWidth="2"
+                fill="none"
+                fillRule="evenodd"
+              />
+            </svg>
+          </span>
+        </Button>
+      </Content>
+      <ImageContainer>
+        <picture>
+          <source media="(min-width: 1000px)" srcSet={desktopImage} />
+          <source media="(min-width: 650px)" srcSet={tabletImage} />
+          <Image
+            src={mobileImage}
+            alt={imageAlt}
+            width={imagewidth}
+            height={imageHeight}
+            //   layout="fill"
+            //   objectFit="cover"
+          />
+        </picture>
+      </ImageContainer>
+    </Card>
+  );
+}
+
+interface CardStyledProps {
+  isHomePage: boolean;
+}
+
+const Card = styled.div<CardStyledProps>`
   /* mobile first */
   position: relative;
   cursor: pointer;
@@ -97,9 +107,9 @@ const Card = styled.div`
 
   // Styles pour les ordinateurs de bureau
   @media (min-width: 769px) {
-    width: 100%;
-    min-height: 308px;
-    height: 100%;
+    /* width: 100%; */
+    width: 541px;
+    height: ${(props) => (props.isHomePage ? "100%" : "308px")};
   }
 `;
 
