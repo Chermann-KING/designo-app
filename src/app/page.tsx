@@ -1,14 +1,14 @@
 "use client";
 
 import Features from "@/components/Features";
-import Hero from "@/components/Hero";
+import HeroCTA from "@/components/HeroCTA";
 import Services from "@/components/Services";
 import styled from "styled-components";
 
 export default function Home() {
   return (
     <ContainerStyled>
-      <Hero />
+      <HeroCTA />
       <Services />
       <Features />
     </ContainerStyled>

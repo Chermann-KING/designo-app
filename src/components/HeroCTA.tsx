@@ -2,9 +2,9 @@ import Image from "next/image";
 import styled from "styled-components";
 import Button from "./shared/Button";
 
-export default function Hero() {
+export default function HeroCTA() {
   return (
-    <HeroSectionStyled>
+    <HeroCTAStyled>
       <div className="infos-text">
         <h1>Award-winning custom designs and digital branding solutions</h1>
         <p>
@@ -25,11 +25,11 @@ export default function Hero() {
           priority={true}
         />
       </div>
-    </HeroSectionStyled>
+    </HeroCTAStyled>
   );
 }
 
-const HeroSectionStyled = styled.section`
+const HeroCTAStyled = styled.section`
   /* mobile first */
   position: relative;
   overflow: hidden;
