@@ -99,7 +99,6 @@ const SectionCardStyled = styled.section<{
     overflow: hidden;
 
     .content-container {
-      border: 3px solid black;
       width: 573px;
       height: 280px;
       row-gap: 24px;
