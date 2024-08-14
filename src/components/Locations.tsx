@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import LocationCard from "./shared/LocationCard";
+import { usePathname } from "next/navigation";
 
 const locations = [
   {
@@ -21,8 +22,11 @@ const locations = [
 ];
 
 function Locations() {
+  const pathname = usePathname();
+  const isContactPage = pathname === "/contact";
+
   return (
-    <Container>
+    <Container isContactPage={isContactPage}>
       {locations.map((location, index) => (
         <LocationCard key={index} {...location} gradientAngle={index * 90} />
       ))}
@@ -30,30 +34,37 @@ function Locations() {
   );
 }
 
-const Container = styled.div`
+interface LocationsStyledProps {
+  isContactPage: boolean;
+}
+
+const Container = styled.div<LocationsStyledProps>`
+  /* mobile first */
   width: 100%;
-  height: 364px;
+  height: 1188px;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  gap: 30px;
+  gap: 48px;
+  margin: 120px auto;
 
   // Styles pour les tablettes
-  @media (max-width: 768px) {
-    height: 1230px;
+  @media (min-width: 481px) and (max-width: 768px) {
     width: 350px;
+    height: 1230px;
 
-    flex-direction: column;
-    align-items: center;
     gap: 80px;
+    margin: ${(props) => (props.isContactPage ? "160px" : "0px")} auto;
   }
 
-  // Styles pour les téléphones
-  @media (max-width: 480px) {
-    height: 1188px;
-    gap: 48px;
-    margin: 118px auto;
+  // Styles pour les ordinateurs de bureau
+  @media (min-width: 769px) {
+    height: 364px;
+
+    flex-direction: row;
+    gap: 30px;
+    margin: ${(props) => (props.isContactPage ? "160px" : "0px")} auto;
   }
 `;
 
