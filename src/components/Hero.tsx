@@ -1,145 +1,136 @@
+import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import Button from "./shared/Button";
 
-export default function Hero() {
+interface ImageSrc {
+  mobile: string;
+  tablet: string;
+  desktop: string;
+}
+
+interface HeroProps {
+  imageSrc: ImageSrc;
+  title: string;
+  content: string;
+}
+
+function Hero({ imageSrc, title, content }: HeroProps) {
   return (
-    <HeroSectionStyled>
-      <div className="infos-text">
-        <h1>Award-winning custom designs and digital branding solutions</h1>
-        <p>
-          With over 10 years in the industry, we are experienced in creating
-          fully responsive websites, app design, and engaging brand experiences.
-          Find out more about our services.
-        </p>
-        <Button variant="primary" href="/web-design">
-          Learn more
-        </Button>
+    <HeroStyled>
+      <div className="content">
+        <h1>{title}</h1>
+        <p>{content}</p>
       </div>
       <div className="image">
-        <Image
-          src={"/images/home/desktop/image-hero-phone.png"}
-          alt="photo téléphone"
-          width={624}
-          height={913}
-          priority={true}
-        />
+        <picture>
+          <source media="(max-width: 480px)" srcSet={imageSrc.mobile} />
+          <source media="(max-width: 768px)" srcSet={imageSrc.tablet} />
+          <Image
+            width={476}
+            height={480}
+            layout="responsive"
+            src={imageSrc.desktop}
+            alt={title}
+          />
+        </picture>
       </div>
-    </HeroSectionStyled>
+    </HeroStyled>
   );
 }
 
-const HeroSectionStyled = styled.section`
+const HeroStyled = styled.section`
   /* mobile first */
-  position: relative;
-  overflow: hidden;
   width: 100%;
-  height: 843px;
-
+  height: 715px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
   align-items: center;
-  text-align: center;
-
+  row-gap: 80px;
   background-color: ${(props) => props.theme.colors.primary.peach};
-  background-image: url("/images/home/desktop/bg-pattern-hero-home.svg");
+  background-image: url("/images/about/mobile/bg-pattern-hero-about-mobile.svg");
+  background-size: 900px;
+  background-position: -500px 180px;
   background-repeat: no-repeat;
-  background-position: 0% 50%;
-  padding: 58px 20px;
+  overflow: hidden;
 
-  .infos-text {
-    height: 350px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-
-    text-align: center;
+  .content {
+    width: 100%;
+    min-width: 327px;
     color: ${(props) => props.theme.colors.primary.white};
-    gap: ${(props) => props.theme.space.sm};
-    padding: 0;
+    text-align: center;
+    padding: 0 14px;
 
     h1 {
-      font-size: 32px;
+      font-size: 2rem;
+      font-weight: ${(props) => props.theme.typography.headings.h1.fontWeight};
       line-height: 36px;
-      font-weight: 500;
+      margin-bottom: 24px;
     }
     p {
-      font-size: 0.9375rem;
-      max-width: 327px;
-    }
-    button {
-      margin-top: 10px;
+      font-size: 0.875rem;
     }
   }
-
   .image {
-    position: relative;
-    top: -80px;
-    width: 284px;
-    height: 573px;
-    align-self: center;
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    min-width: 375px;
+    height: 320px;
+    min-height: 320px;
   }
 
   // Styles pour les tablettes
   @media (min-width: 481px) and (max-width: 768px) {
-    background-position: 200% 50%;
-    border-radius: ${(props) => props.theme.borderRadius.large};
+    width: 100%;
+    height: 632px;
+    border-radius: 15px;
+    background-size: 1600px;
+    background-position: -1160px -20px;
 
-    .infos-text {
-      max-width: 573px;
-      gap: 19px;
+    .content {
+      width: 573px;
+      padding: 0 36px;
 
       h1 {
-        font-size: ${(props) => props.theme.typography.headings.h1.fontSize};
-        line-height: ${(props) =>
-          props.theme.typography.headings.h1.lineHeight};
-      }
-      p {
-        max-width: 445px;
-        padding: 0 5px;
+        font-size: 3rem;
       }
     }
-
     .image {
-      top: -80px;
+      width: 100%;
+      min-width: 689px;
+      height: 320px;
+      min-height: 320px;
     }
   }
 
   // Styles pour les ordinateurs de bureau
   @media (min-width: 769px) {
-    height: 640px;
+    height: 480px;
     flex-direction: row;
-    justify-content: space-between;
-    background-position: center right;
-    border-radius: ${(props) => props.theme.borderRadius.large};
-    padding: 0 93px;
+    column-gap: 80px;
+    border-radius: 15px;
+    background-size: 1870px;
+    background-position: -1245px -140px;
 
-    .infos-text {
-      max-width: 540px;
-      height: 350px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: flex-start;
+    .content {
+      width: 478px;
       text-align: left;
-      margin-right: 0px;
+      padding: 0px;
+
       h1 {
-        font-size: ${(props) => props.theme.typography.headings.h1.fontSize};
-        line-height: ${(props) =>
-          props.theme.typography.headings.h1.lineHeight};
+        font-size: 3rem;
       }
       p {
-        max-width: 445px;
+        font-size: 1rem;
+        line-height: 26px;
       }
     }
-
     .image {
-      width: 284px;
-      height: 573px;
+      width: 476px;
+      min-width: 476px;
+      height: 100%;
+      min-height: 480px;
     }
   }
 `;
+
+export default Hero;
