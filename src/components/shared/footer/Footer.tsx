@@ -57,7 +57,7 @@ export default function Footer() {
                 Toronto, Ontario M9C 3J5
               </address>
               <address className="infos-contact">
-                <h4>Contact Us (Central Office)</h4>
+                <strong>Contact Us (Central Office)</strong>
                 <p>
                   P: <a href="tel:+12538638967">+1 253-863-8967</a>
                   <br />
