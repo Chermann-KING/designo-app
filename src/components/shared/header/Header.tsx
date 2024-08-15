@@ -162,6 +162,10 @@ const HeaderStyled = styled.header`
         text-transform: uppercase;
         line-height: 25px;
         letter-spacing: 2px;
+
+        a:hover {
+          text-decoration: underline;
+        }
       }
     }
 
