@@ -69,17 +69,29 @@ export default function Header() {
         <nav className={isMenuOpen ? "open" : ""}>
           <ul>
             <li>
-              <Link href="/our-company" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                href="/our-company"
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="Our Company"
+              >
                 Our Company
               </Link>
             </li>
             <li>
-              <Link href="/locations" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                href="/locations"
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="Locations"
+              >
                 Locations
               </Link>
             </li>
             <li>
-              <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
+              <Link
+                href="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="Contact"
+              >
                 Contact
               </Link>
             </li>

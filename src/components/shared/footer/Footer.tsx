@@ -36,13 +36,19 @@ export default function Footer() {
               <nav>
                 <ul>
                   <li>
-                    <Link href="/our-company">Our Company</Link>
+                    <Link href="/our-company" aria-label="Our Company">
+                      Our Company
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/locations">Locations</Link>
+                    <Link href="/locations" aria-label="Locations">
+                      Locations
+                    </Link>
                   </li>
                   <li>
-                    <Link href="/contact">Contact</Link>
+                    <Link href="/contact" aria-label="Contact">
+                      Contact
+                    </Link>
                   </li>
                 </ul>
               </nav>
