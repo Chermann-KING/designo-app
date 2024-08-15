@@ -91,7 +91,7 @@ export default function ContactPage() {
 
   // affichage
   return (
-    <MainStyled>
+    <ContainerStyled>
       <ContactSectionStyled>
         <div className="contact-content-infos">
           <h1>Contact Us</h1>
@@ -140,11 +140,11 @@ export default function ContactPage() {
       </ContactSectionStyled>
       <Locations />
       <BackgroundImage bottom="-550px" right="250px" />
-    </MainStyled>
+    </ContainerStyled>
   );
 }
 
-const MainStyled = styled.main`
+const ContainerStyled = styled.div`
   /* mobile first */
   width: clamp(327px, 100%, 1111px);
 

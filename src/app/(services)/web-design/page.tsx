@@ -55,7 +55,7 @@ const articles = [
 
 export default function WebDesignPage() {
   return (
-    <MainStyled>
+    <ContainerStyled>
       <ServiceHeader
         title={"Web Design"}
         description={
@@ -105,11 +105,11 @@ export default function WebDesignPage() {
         </Link>
       </ServicesStyled>
       <BackgroundImage top="260px" right="28%" />
-    </MainStyled>
+    </ContainerStyled>
   );
 }
 
-const MainStyled = styled.main`
+const ContainerStyled = styled.div`
   /* mobile first */
   width: clamp(327px, 100%, 1111px);
 

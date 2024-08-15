@@ -57,7 +57,7 @@ export default function Footer() {
                 Toronto, Ontario M9C 3J5
               </address>
               <address className="infos-contact">
-                <h4>Contact Us (Central Office)</h4>
+                <strong>Contact Us (Central Office)</strong>
                 <p>
                   P: <a href="tel:+12538638967">+1 253-863-8967</a>
                   <br />
@@ -66,7 +66,7 @@ export default function Footer() {
               </address>
 
               <div className="social-network">
-                <Link href={"#"} passHref target="_blank">
+                <Link href={"https://facebook.com"} passHref target="_blank">
                   <svg
                     width="16"
                     height="16"
@@ -81,7 +81,7 @@ export default function Footer() {
                     />
                   </svg>
                 </Link>
-                <Link href={"#"} passHref target="_blank">
+                <Link href={"https://youtube.com"} passHref target="_blank">
                   <svg
                     width="16"
                     height="16"
@@ -96,7 +96,7 @@ export default function Footer() {
                     />
                   </svg>
                 </Link>
-                <Link href={"#"} passHref target="_blank">
+                <Link href={"https://x.com"} passHref target="_blank">
                   <svg
                     width="16"
                     height="16"
@@ -111,7 +111,7 @@ export default function Footer() {
                     />
                   </svg>
                 </Link>
-                <Link href={"#"} passHref target="_blank">
+                <Link href={"https://pinterest.com"} passHref target="_blank">
                   <svg
                     width="16"
                     height="16"
@@ -126,7 +126,7 @@ export default function Footer() {
                     />
                   </svg>
                 </Link>
-                <Link href={"#"} passHref target="_blank">
+                <Link href={"https://instagram.com"} passHref target="_blank">
                   <svg
                     width="16"
                     height="16"
