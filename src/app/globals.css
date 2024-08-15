@@ -6,6 +6,11 @@
     margin: 0;
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: "Jost", sans-serif;
     background-color: #ffffff;

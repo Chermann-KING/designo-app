@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Field from "@/components/shared/Field";
 import Button from "@/components/shared/Button";
 import Locations from "@/components/Locations";
+import BackgroundImage from "@/components/shared/BackgroundImage";
 
 export default function ContactPage() {
   // états
@@ -138,6 +139,7 @@ export default function ContactPage() {
         </div>
       </ContactSectionStyled>
       <Locations />
+      <BackgroundImage bottom="-550px" right="250px" />
     </MainStyled>
   );
 }

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Hero from "@/components/Hero";
 import SectionCard from "@/components/SectionCard";
 import Locations from "@/components/Locations";
+import BackgroundImage from "@/components/shared/BackgroundImage";
 
 export default function AboutPage() {
   return (
@@ -45,6 +46,8 @@ export default function AboutPage() {
         ]}
         imagePosition="right"
       />
+      <BackgroundImage top="600px" left="0px" />
+      <BackgroundImage bottom="-1450px" right="-180px" />
     </MainStyled>
   );
 }
