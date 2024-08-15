@@ -6,6 +6,7 @@ import ServiceHeader from "@/components/shared/ServiceHeader";
 import Link from "next/link";
 import ServiceCard from "@/components/shared/ServiceCard";
 import Article from "@/components/shared/Article";
+import BackgroundImage from "@/components/shared/BackgroundImage";
 
 //Données pour les articles
 const articles = [
@@ -103,6 +104,7 @@ export default function WebDesignPage() {
           />
         </Link>
       </ServicesStyled>
+      <BackgroundImage top="260px" right="28%" />
     </MainStyled>
   );
 }

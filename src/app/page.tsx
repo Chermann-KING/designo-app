@@ -5,12 +5,16 @@ import HeroCTA from "@/components/HeroCTA";
 import Services from "@/components/Services";
 import styled from "styled-components";
 
+import BackgroundImage from "@/components/shared/BackgroundImage";
+
 export default function Home() {
   return (
     <ContainerStyled>
       <HeroCTA />
       <Services />
       <Features />
+      <BackgroundImage top="600px" left="0px" />
+      <BackgroundImage bottom="-1550px" right="0px" rotate="rotate(180deg)" />
     </ContainerStyled>
   );
 }
