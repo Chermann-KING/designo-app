@@ -9,7 +9,7 @@ import BackgroundImage from "@/components/shared/BackgroundImage";
 
 export default function AboutPage() {
   return (
-    <MainStyled>
+    <ContainerStyled>
       <Hero
         imageSrc={{
           mobile: "/images/about/mobile/image-about-hero.jpg",
@@ -48,11 +48,11 @@ export default function AboutPage() {
       />
       <BackgroundImage top="600px" left="0px" />
       <BackgroundImage bottom="-1450px" right="-180px" />
-    </MainStyled>
+    </ContainerStyled>
   );
 }
 
-const MainStyled = styled.main`
+const ContainerStyled = styled.div`
   width: clamp(327px, 100%, 1111px);
 
   display: flex;

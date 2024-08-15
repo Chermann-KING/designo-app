@@ -27,7 +27,7 @@ export default function RootLayout({
   );
 }
 
-const WapperStyled = styled.div`
+const WapperStyled = styled.main`
   /* moblie first */
   /* border: 2px solid red; */
 

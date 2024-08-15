@@ -32,7 +32,7 @@ const articles = [
 
 export default function GraphicDesignPage() {
   return (
-    <MainStyled>
+    <ContainerStyled>
       <ServiceHeader
         title={"Graphic Design"}
         description={
@@ -82,11 +82,11 @@ export default function GraphicDesignPage() {
         </Link>
       </ServicesStyled>
       <BackgroundImage top="260px" right="28%" />
-    </MainStyled>
+    </ContainerStyled>
   );
 }
 
-const MainStyled = styled.main`
+const ContainerStyled = styled.div`
   /* mobile first */
   width: clamp(327px, 100%, 1111px);
 

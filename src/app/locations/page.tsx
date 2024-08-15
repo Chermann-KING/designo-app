@@ -6,7 +6,7 @@ import LocationSection from "@/components/shared/LocationSection";
 
 export default function LocationsPage() {
   return (
-    <MainStyled>
+    <ContainerStyled>
       <LocationSection
         title="Canada"
         address={{
@@ -59,10 +59,10 @@ export default function LocationsPage() {
         imgTablet="/images/locations/tablet/image-map-uk.png"
         isEven={false}
       />
-    </MainStyled>
+    </ContainerStyled>
   );
 }
-const MainStyled = styled.main`
+const ContainerStyled = styled.div`
   width: clamp(327px, 100%, 1111px);
 
   display: flex;
