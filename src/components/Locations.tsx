@@ -16,7 +16,7 @@ const locations = [
   },
   {
     title: "United Kingdom",
-    imgUrl: "/images/home/desktop/illustration-friendly.svg",
+    imgUrl: "/images/shared/desktop/illustration-united-kingdom.svg",
     altText: "Location United Kingdom",
   },
 ];
