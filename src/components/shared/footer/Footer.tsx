@@ -22,7 +22,7 @@ export default function Footer() {
           <div className="bottom-footer">
             <div className="footer-logo-menu">
               <div className="container-logo">
-                <Link href={"/"} className="logo" role="logo" passHref>
+                <Link href={"/"} className="logo" passHref>
                   <Image
                     src={"/images/favicon-32x32.png"}
                     alt="picto designo"
@@ -66,7 +66,7 @@ export default function Footer() {
               </address>
 
               <div className="social-network">
-                <Link href={"#"} role="icon" passHref target="_blank">
+                <Link href={"#"} passHref target="_blank">
                   <svg
                     width="16"
                     height="16"
@@ -81,7 +81,7 @@ export default function Footer() {
                     />
                   </svg>
                 </Link>
-                <Link href={"#"} role="icon" passHref target="_blank">
+                <Link href={"#"} passHref target="_blank">
                   <svg
                     width="16"
                     height="16"
@@ -96,7 +96,7 @@ export default function Footer() {
                     />
                   </svg>
                 </Link>
-                <Link href={"#"} role="icon" passHref target="_blank">
+                <Link href={"#"} passHref target="_blank">
                   <svg
                     width="16"
                     height="16"
@@ -111,7 +111,7 @@ export default function Footer() {
                     />
                   </svg>
                 </Link>
-                <Link href={"#"} role="icon" passHref target="_blank">
+                <Link href={"#"} passHref target="_blank">
                   <svg
                     width="16"
                     height="16"
@@ -126,7 +126,7 @@ export default function Footer() {
                     />
                   </svg>
                 </Link>
-                <Link href={"#"} role="icon" passHref target="_blank">
+                <Link href={"#"} passHref target="_blank">
                   <svg
                     width="16"
                     height="16"
