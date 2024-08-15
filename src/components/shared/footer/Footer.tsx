@@ -66,7 +66,12 @@ export default function Footer() {
               </address>
 
               <div className="social-network">
-                <Link href={"https://facebook.com"} passHref target="_blank">
+                <Link
+                  href={"https://facebook.com"}
+                  passHref
+                  target="_blank"
+                  aria-label="Facebook"
+                >
                   <svg
                     width="16"
                     height="16"
@@ -81,7 +86,12 @@ export default function Footer() {
                     />
                   </svg>
                 </Link>
-                <Link href={"https://youtube.com"} passHref target="_blank">
+                <Link
+                  href={"https://youtube.com"}
+                  passHref
+                  target="_blank"
+                  aria-label="Youtube"
+                >
                   <svg
                     width="16"
                     height="16"
@@ -96,7 +106,12 @@ export default function Footer() {
                     />
                   </svg>
                 </Link>
-                <Link href={"https://x.com"} passHref target="_blank">
+                <Link
+                  href={"https://x.com"}
+                  passHref
+                  target="_blank"
+                  aria-label="X"
+                >
                   <svg
                     width="16"
                     height="16"
@@ -111,7 +126,12 @@ export default function Footer() {
                     />
                   </svg>
                 </Link>
-                <Link href={"https://pinterest.com"} passHref target="_blank">
+                <Link
+                  href={"https://pinterest.com"}
+                  passHref
+                  target="_blank"
+                  aria-label="Pinterest"
+                >
                   <svg
                     width="16"
                     height="16"
@@ -126,7 +146,12 @@ export default function Footer() {
                     />
                   </svg>
                 </Link>
-                <Link href={"https://instagram.com"} passHref target="_blank">
+                <Link
+                  href={"https://instagram.com"}
+                  passHref
+                  target="_blank"
+                  aria-label="Instagram"
+                >
                   <svg
                     width="16"
                     height="16"
